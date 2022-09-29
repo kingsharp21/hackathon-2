@@ -19,8 +19,8 @@ function sortStudents(array $students): array
 }
 function DescSort($val1,$val2)
 {
-    if ($val1['marks'] == $val2['marks']) return 0;
-    return ($val1['marks'] < $val2['marks']) ? 1 : -1;
+    if ($val1['averageScore'] == $val2['averageScore']) return 0;
+    return ($val1['averageScore'] < $val2['averageScore']) ? 1 : -1;
 }
 
 function findStudentByPosition(array $students, int $position): array
