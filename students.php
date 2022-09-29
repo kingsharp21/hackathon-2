@@ -14,14 +14,19 @@ function getStudents(): array
 
 function sortStudents(array $students): array
 {
-    // edit the code below
-    return [];
+    $sort_list = usort($students,'DescSort');
+    return $sort_list;
+}
+function DescSort($val1,$val2)
+{
+    if ($val1['marks'] == $val2['marks']) return 0;
+    return ($val1['marks'] < $val2['marks']) ? 1 : -1;
 }
 
 function findStudentByPosition(array $students, int $position): array
 {
     // edit the code below
-    return [];
+    return $students[$position];
 }
 
 $students = getStudents();
