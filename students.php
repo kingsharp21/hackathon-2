@@ -31,7 +31,7 @@ function findStudentByPosition(array $students, int $position): array
 
 $students = getStudents();
 
-//print_r(sortStudents($students));
+print_r(sortStudents($students));
 
 print_r(findStudentByPosition($students, 3));
 
