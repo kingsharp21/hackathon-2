@@ -14,14 +14,18 @@ function getStudents(): array
 
 function sortStudents(array $students): array
 {
-    $sort_list = usort($students,'DescSort');
-    return $sort_list;
+    //my code
+    usort($students,'DescSort');
+    return $students;
+
 }
+// i used this function as a call back function for usort() in the sortStudents function
 function DescSort($val1,$val2)
 {
     if ($val1['averageScore'] == $val2['averageScore']) return 0;
     return ($val1['averageScore'] < $val2['averageScore']) ? 1 : -1;
 }
+
 
 function findStudentByPosition(array $students, int $position): array
 {
@@ -31,7 +35,9 @@ function findStudentByPosition(array $students, int $position): array
 
 $students = getStudents();
 
-print_r(sortStudents($students));
+print_r(sortStudents($students)); // this prints out the sorted array from 100 - ....
 
-print_r(findStudentByPosition($students, 3));
+echo '<br/>'; // i inserted this to seperate the first print_r from the second ::
+
+print_r(findStudentByPosition($students, 3)); // The student in the third position is : Array ( [fullName] => Nana Adomanko [gender] => female [course] => Sales [averageScore] => 88 [house] => 4 )
 
