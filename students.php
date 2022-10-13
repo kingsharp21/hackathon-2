@@ -30,14 +30,22 @@ function DescSort($val1,$val2)
 function findStudentByPosition(array $students, int $position): array
 {
     // edit the code below
-    return $students[$position];
+    return $students[$position-1]; 
 }
 
 $students = getStudents();
 
-print_r(sortStudents($students)); // this prints out the sorted array from 100 - ....
+// print_r(sortStudents($students)); 
 
-echo '<br/>'; // i inserted this to seperate the first print_r from the second ::
+$sorted_student = sortStudents($students); //this variable contains the sort array.
 
-print_r(findStudentByPosition($students, 3)); // The student in the third position is : Array ( [fullName] => Nana Adomanko [gender] => female [course] => Sales [averageScore] => 88 [house] => 4 )
+echo '<br/>'; 
+
+print_r(findStudentByPosition($sorted_student, 3)); // The student in the third position is : Array ( [fullName] => Solomon APPIER-SIGN [gender] => male [course] => Software Engineering [averageScore] => 95 [house] => 1 )
+
+//testing other inputs
+echo '<br/>';
+print_r(findStudentByPosition($sorted_student, 6));
+echo '<br/>';
+print_r(findStudentByPosition($sorted_student, 1));
 
